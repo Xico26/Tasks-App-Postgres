@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <title>PosTasks - Task <%= task.rows[0].id %> - Edit</title>
+</head>
+<body>
+    <%- include("../partials/tasksnavbar") %>
+    <form action="/tasks/<%= task.rows[0].id %>?_method=PUT" method="POST">
+        <div>
+            <label for="taskName">Task Name</label>
+            <input type="text" name="taskName" id="taskName" class="border" placeholder="<%= task.rows[0].name %>" required>
+        </div>
+        <div>
+            <label for="taskDescription">Task Description</label>
+            <textarea name="taskDescription" id="taskDescription" cols="50" rows="5" class="border"><%= task.rows[0].description %></textarea>
+        </div>
+        <div>
+            <label for="dueDate">Due Date</label>
+            <input type="date" name="dueDate" id="dueDate" class="border">
+        </div>
+        <div>
+            <button class="bg-green-500 border-green-600 border p-1">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

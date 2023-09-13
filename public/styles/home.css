@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://plus.unsplash.com/premium_photo-1661963783275-dff88a0296f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2969&q=80");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+#main {
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    
+}

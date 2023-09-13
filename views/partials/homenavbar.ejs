@@ -1,0 +1,46 @@
+<nav class="h-12 bg-gray-700 text-base flex align-middle leading-[48px] text-white justify-between">
+    <div class="content-center">
+        <span class="m-2"><a href="#">Home</a></span>
+        <span class="m-2"><a href="/tasks">Tasks</a></span>
+    </div>
+    <div class="content-end px-10">
+        <a href="#" id="imgBtn">
+            <img src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png" class="h-8 inline-flex my-1" alt="">
+        </a>
+    </div>
+</nav>
+<div class="w-64 h-30 border bg-gray-700 text-white rounded-md mr-10 ml-auto shadow px-2 hidden" id="userMenu">
+    <div class="flex my-4">
+        <a href="#" class="flex">
+            <img src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png" class="h-8" alt="">
+            <div class="inline-block mx-2 h-8">
+                <% if (currentUser) { %>
+                <h2 class="text-sm font-bold"><%= currentUser.name %></h2>
+                <p class="text-sm text-gray-300"><%= currentUser.email %></p>
+                <% } else { %>
+                    <h2 class="text-sm font-bold">Not Registered</h2>
+                    <p class="text-sm text-gray-300">Register Below!</p>
+                <% } %>
+            </div>
+        </a>
+    </div>
+    <hr>
+    <div>
+        <% if (currentUser) { %>
+        <form action="/logout" method="post" class="py-1">
+            <button class="text-base"><i class="fa-solid fa-arrow-right-from-bracket"></i>  Logout</button>
+        </form>
+        <% } else { %>
+            <a href="/signin" class="block p-1">Sign In</a>
+            <a href="/signup" class="block p-1">Sign Up</a>
+        <% } %>
+    </div>
+</div>
+<script>
+    const userBtn = document.querySelector("#imgBtn")
+    const userMenu = document.querySelector("#userMenu")
+    userBtn.addEventListener("click", async () => {
+        await userMenu.classList.toggle("hidden")
+        userMenu.classList.toggle("relative", "z-2")
+    })
+</script>

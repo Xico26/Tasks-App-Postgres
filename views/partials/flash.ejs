@@ -1,0 +1,16 @@
+<% if (success && success.length) { %>
+
+    <div class="mx-2 my-1" role="alert">
+      <span><%= success %></span>
+      <button type="button" data-bs-dismiss="alert" aria-label="Close">x</button>
+    </div>
+    
+    <% } %>
+    
+    <% if (error && error.length) { %>
+    
+    <div class="mx-2 my-2 p-2 border border-red-800 text-red-800 bg-red-300 rounded-md" role="alert">
+        <span><%= error %></span>
+    </div>
+
+<% } %>

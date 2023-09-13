@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <title>PosTasks - New Task</title>
+</head>
+<body>
+    <div class="backdrop-brightness-75 h-screen w-screen brightness-75">
+        <%- include("../partials/tasksnavbar") %>
+    </div>
+    <div class="rounded-md absolute w-[75%] h-[90%] bg-white m-auto left-0 right-0 top-0 bottom-0 brightness-100 backdrop-brightness-100">
+        <div class="p-4 h-[7%]">
+            <span class="text-sm font-light p-1"><i class="fa-solid fa-inbox"></i> Task</span>
+            <a href="/tasks/<%= task.rows[0].id %>/edit" class="absolute right-8 text-sm font-light hover:bg-slate-200 p-1"><i class="fa-regular fa-pen-to-square"></i></a>
+            <a class="absolute right-2 text-sm font-light hover:bg-slate-200 p-1" href="/tasks"><i class="fa-solid fa-x"></i></a>
+        </div>
+        <hr>
+        <div class="p-4">
+            <h1 class="text-xl p-2"><%= task.rows[0].name %></h1>
+            <p class="text-sm p-2"><%= task.rows[0].description %></p>
+        </div>
+        <div class="absolute right-0 top-[52px] w-64 bg-gray-100 border-l p-2 h-[93%] ">
+            <p class="text-sm font-semibold p-1">Due Date</p>
+            <p class="text-sm p-1"><i class="fa-regular fa-calendar text-red-500"></i> <%= task.rows[0].due %></p>
+        </div>
+    </div>
+    <main>
+        <div>
+            <h1>PosTasks</h1>
+        </div>
+        <form action="/tasks" method="POST">
+            <div>
+                <label for="taskName">Task Name</label>
+                <input type="text" name="taskName" id="taskName" class="border" required>
+            </div>
+            <div>
+                <label for="taskDescription">Task Description</label>
+                <textarea name="taskDescription" id="taskDescription" cols="50" rows="5" class="border"></textarea>
+            </div>
+            <div>
+                <label for="dueDate">Due Date</label>
+                <input type="date" name="dueDate" id="dueDate" class="border">
+            </div>
+            <div>
+                <button class="bg-green-500 border-green-600 border p-1">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

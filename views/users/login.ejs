@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head") %>
+    <title>PosTasks - Sign In %></title>
+</head>
+<body>
+    <%- include("../partials/homenavbar") %>
+    <div class="border rounded-lg mx-auto my-4 shadow w-[400px] text-center">
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2944&q=80" alt="" class="rounded-md">
+        <%- include("../partials/flash") %>
+        <h1 class="text-3xl p-2 my-2 text-center">Sign In</h1>
+        <form action="/signin" method="post" class="w-[400px] mx-auto p-2">
+            <section class="my-2 p-2">
+                <label for="Email" class="block">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required autofocus class="border w-[365px] p-1">
+            </section>
+            <section class="my-2 p-2">
+                <label for="current-password" class="block">Password</label>
+                <input id="current-password" name="password" type="password" autocomplete="current-password" required class="border w-[365px] p-1">
+            </section>
+            <section class="text-center">
+                <button type="submit" class="border border-green-600 text-green-600 rounded-md p-1">Sign in</button>
+            </section>
+        </form>
+    </div>
+</body>
+</html>

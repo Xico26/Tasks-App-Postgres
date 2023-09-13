@@ -1,0 +1,40 @@
+<nav class="h-12 bg-blue-600 text-xl flex align-middle items-center text-white justify-between ">
+    <div class="content-start">
+        <span class="mx-2"><i class="fa-solid fa-bars"></i></span>
+        <span class="mx-2"><a href="/tasks"><i class="fa-solid fa-house"></i></a></span>
+        <form action="/tasks/search" class="inline">
+            <input type="text" name="" id="" placeholder="Search" class="text-sm text-white placeholder:text-gray-200 p-1 bg-blue-500 rounded-md hover:bg-white hover:text-black  hover:ease-in-out">
+        </form>
+    </div>
+    <div class="content-end px-10">
+        <a href="#" id="addBtn" class="mx-4"><i class="fa-solid fa-plus"></i></a>
+        <a href="#" id="imgBtn">
+            <img src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png" class="h-7 inline-flex my-1 align-middle" alt="">
+        </a>
+    </div>
+</nav>
+<div class="w-64 h-24 border rounded-md mr-10 ml-auto shadow px-2 hidden" id="userMenu">
+    <div class="flex py-4">
+        <a href="" class="flex">
+            <img src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png" class="h-8" alt="">
+            <div class="inline-block mx-2 h-8">
+                <h2 class="text-sm font-bold"><%= currentUser.name %></h2>
+                <p class="text-sm text-gray-500"><%= currentUser.email %></p>
+            </div>
+        </a>
+    </div>
+    <hr>
+    <div>
+        <form action="/logout" method="post" class="py-1">
+            <button class="text-base"><i class="fa-solid fa-arrow-right-from-bracket"></i>  Logout</button>
+        </form>
+    </div>
+</div>
+<script>
+    const userBtn = document.querySelector("#imgBtn")
+    const userMenu = document.querySelector("#userMenu")
+    userBtn.addEventListener("click", async () => {
+        await userMenu.classList.toggle("hidden")
+        userMenu.classList.toggle("relative", "z-2")
+    })
+</script>
